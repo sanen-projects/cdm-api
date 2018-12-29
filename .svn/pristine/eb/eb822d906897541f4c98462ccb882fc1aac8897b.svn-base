@@ -1,0 +1,56 @@
+package online.sanen.cdm.basic;
+
+/**
+ * 
+ * @author LazyToShow <br>
+ *         Date: 2018年6月11日 <br>
+ *         Time: 17:36
+ *
+ */
+public enum Driven{
+
+	/**
+	 * <B>com.mysql.cj.jdbc.Driver </B><br>
+	 * 是否使用MYSQL新/旧驱动由JAR包版本决定
+	 */
+	MYSQL("com.mysql.jdbc.Driver"),
+
+	/**
+	 * <B>com.mysql.cj.jdbc.Driver </B><br>
+	 * 是否使用MYSQL新/旧驱动由JAR包版本决定。<br>
+	 * 如果出现以下提示,尝试使用新的驱动:<br>
+	 * 
+	 * Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new
+	 * driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically
+	 * registered via the SPI and manual loading of the driver class is generally
+	 * unnecessary.
+	 */
+	MYSQL_NEW("com.mysql.cj.jdbc.Driver"),
+
+	SQLITE("org.sqlite.JDBC"),
+
+	/**
+	 * <a href=
+	 * "http://www.oracle.com/technetwork/cn/database/features/jdbc/index-093096-zhs.html">
+	 * ORACLE驱动下载地址</a>
+	 */
+	ORACLE("oracle.jdbc.OracleDriver"),
+
+	/** 支持SQLServer 6.5、7、2000、2005、2008、2012 */
+	MS_2012("net.sourceforge.jtds.jdbc.Driver");
+
+	String value;
+
+	private Driven(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+}
